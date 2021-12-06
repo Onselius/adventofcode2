@@ -6,23 +6,44 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Dec06 {
 
     private List<String> lines;
-    private HashMap<List<Integer>, Integer> grid;
 
     public Dec06() {
     }
 
-    protected long part1()
+    protected long part1(int days)
     {
-        return 0L;
+        List<Integer> rawInput = Arrays.stream(lines.get(0).split(",")).mapToInt(Integer::parseInt).boxed().collect(Collectors.toList());
+        HashMap<Integer, Long> fishes = new HashMap<>();
+        for (int i = 0; i < 9; i++)
+        {
+            fishes.put(i, 0L);
+        }
+        for (Integer input : rawInput)
+        {
+            fishes.put(input, fishes.get(input) + 1);
+        }
+        for (int day = 0; day < days; day++)
+        {
+            long newFishes = fishes.get(0);
+            for (int i = 0; i < 8; i++)
+            {
+                fishes.put(i, fishes.get(i + 1));
+            }
+            fishes.put(8, newFishes);
+            fishes.put(6, fishes.get(6) + newFishes);
+        }
+
+        return fishes.values().stream().mapToLong(Long::valueOf).sum();
     }
 
-    protected long part2()
+    protected long part2(int days)
     {
-        return 0L;
+        return part1(days);
     }
 
     public List<String> getLines() {
@@ -39,7 +60,4 @@ public class Dec06 {
         this.lines = ReadFile.getTextFromFile(url.getPath());
     }
 
-    public HashMap<List<Integer>, Integer> getGrid() {
-        return grid;
-    }
 }
