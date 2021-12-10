@@ -3,6 +3,8 @@ package year21;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 class Dec08Test {
     private final Dec08 dec08 = new Dec08();
     private final String testFilename = "test/test08.txt";
@@ -13,7 +15,7 @@ class Dec08Test {
     {
         dec08.updateLinesFromFilename(testFilename);
 
-        Assertions.assertEquals(5, dec08.part1());
+        Assertions.assertEquals(26, dec08.part1());
     }
 
     @Test
@@ -21,7 +23,16 @@ class Dec08Test {
     {
         dec08.updateLinesFromFilename(testFilename);
 
-        Assertions.assertEquals(12, dec08.part2());
+        Assertions.assertEquals(61229, dec08.part2());
+    }
+
+    @Test
+    void testPart2SmallSample()
+    {
+        dec08.updateLinesFromFilename(testFilename);
+        dec08.setLines(List.of("acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab | cdfeb fcadb cdfeb cdbaf"));
+
+        Assertions.assertEquals(5353, dec08.part2());
     }
 
     @Test
@@ -31,7 +42,7 @@ class Dec08Test {
 
         long answer = dec08.part1();
         System.out.println("Part1: " + answer);
-        Assertions.assertEquals(6461, answer);
+        Assertions.assertEquals(412, answer);
     }
 
     @Test
@@ -41,6 +52,6 @@ class Dec08Test {
 
         long answer = dec08.part2();
         System.out.println("Part2: " + answer);
-        Assertions.assertEquals(18085, answer);
+        Assertions.assertEquals(978171, answer);
     }
 }
