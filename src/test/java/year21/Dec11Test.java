@@ -9,11 +9,19 @@ class Dec11Test {
     private final String inputFilename = "input/input11.txt";
 
     @Test
-    void testPart1()
+    void test10Part1()
     {
         dec11.updateLinesFromFilename(testFilename);
 
-        Assertions.assertEquals(5, dec11.part1());
+        Assertions.assertEquals(204, dec11.part1(10));
+    }
+
+    @Test
+    void test100Part1()
+    {
+        dec11.updateLinesFromFilename(testFilename);
+
+        Assertions.assertEquals(1656, dec11.part1(100));
     }
 
     @Test
@@ -21,7 +29,7 @@ class Dec11Test {
     {
         dec11.updateLinesFromFilename(testFilename);
 
-        Assertions.assertEquals(12, dec11.part2());
+        Assertions.assertEquals(195, dec11.part2());
     }
 
     @Test
@@ -29,9 +37,9 @@ class Dec11Test {
     {
         dec11.updateLinesFromFilename(inputFilename);
 
-        long answer = dec11.part1();
+        long answer = dec11.part1(100);
         System.out.println("Part1: " + answer);
-        Assertions.assertEquals(6461, answer);
+        Assertions.assertEquals(1735, answer);
     }
 
     @Test
@@ -41,6 +49,6 @@ class Dec11Test {
 
         long answer = dec11.part2();
         System.out.println("Part2: " + answer);
-        Assertions.assertEquals(18115, answer);
+        Assertions.assertEquals(400, answer);
     }
 }
