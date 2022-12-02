@@ -13,15 +13,14 @@ class Dec15Test {
     {
         dec15.updateLinesFromFilename(testFilename);
 
-        Assertions.assertEquals(5, dec15.part1());
+        Assertions.assertEquals(40, dec15.part1());
     }
 
     @Test
-    void testPart2()
-    {
+    void testPart2() throws InterruptedException {
         dec15.updateLinesFromFilename(testFilename);
 
-        Assertions.assertEquals(12, dec15.part2());
+        Assertions.assertEquals(315, dec15.part2());
     }
 
     @Test
@@ -31,16 +30,15 @@ class Dec15Test {
 
         long answer = dec15.part1();
         System.out.println("Part1: " + answer);
-        Assertions.assertEquals(6461, answer);
+        Assertions.assertEquals(361, answer);
     }
 
     @Test
-    void testPart2Input()
-    {
+    void testPart2Input() throws InterruptedException {
         dec15.updateLinesFromFilename(inputFilename);
 
         long answer = dec15.part2();
         System.out.println("Part2: " + answer);
-        Assertions.assertEquals(18155, answer);
+        Assertions.assertEquals(2838, answer);
     }
 }

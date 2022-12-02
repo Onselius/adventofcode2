@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class Dec22Test {
     private final Dec22 dec22 = new Dec22();
     private final String testFilename = "test/test22.txt";
-    private final String inputFilename = "input/input22.txt";
+    private final String inputFilename = "input/input01.txt";
 
     @Test
     void testPart1()

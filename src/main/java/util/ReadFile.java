@@ -1,9 +1,7 @@
 package util;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ReadFile {
@@ -40,9 +38,46 @@ public class ReadFile {
             String[] line = lines.get(y).split("");
             for (int x = 0; x < lines.get(0).length(); x++)
             {
-                grid.put(List.of(y, x), Integer.parseInt(line[x]));
+                grid.put(List.of(x, y), Integer.parseInt(line[x]));
             }
         }
         return grid;
+    }
+
+    public static void printGrid(HashMap<List<Integer>, Integer> grid, char printChar)
+    {
+        int maxX = grid.keySet().stream()
+                .map(e -> e.get(0))
+                .max(Integer::compare)
+                .get();
+
+        int maxY = grid.keySet().stream()
+                .map(e -> e.get(1))
+                .max(Integer::compare)
+                .get();
+
+        for (int y = 0; y <= maxY; y++)
+        {
+            for (int x = 0; x <= maxX; x++)
+            {
+                List<Integer> point = List.of(x, y);
+                if (grid.containsKey(point))
+                {
+                    if (printChar == 0)
+                    {
+                        System.out.print("'" + grid.get(point) + "'");
+                    }
+                    else
+                    {
+                        System.out.print(printChar);
+                    }
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
     }
 }

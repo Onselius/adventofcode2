@@ -13,7 +13,7 @@ class Dec14Test {
     {
         dec14.updateLinesFromFilename(testFilename);
 
-        Assertions.assertEquals(5, dec14.part1());
+        Assertions.assertEquals(1588, dec14.part1(10));
     }
 
     @Test
@@ -21,7 +21,7 @@ class Dec14Test {
     {
         dec14.updateLinesFromFilename(testFilename);
 
-        Assertions.assertEquals(12, dec14.part2());
+        Assertions.assertEquals(2188189693529L, dec14.part2(40));
     }
 
     @Test
@@ -29,9 +29,9 @@ class Dec14Test {
     {
         dec14.updateLinesFromFilename(inputFilename);
 
-        long answer = dec14.part1();
+        long answer = dec14.part1(10);
         System.out.println("Part1: " + answer);
-        Assertions.assertEquals(6461, answer);
+        Assertions.assertEquals(3048, answer);
     }
 
     @Test
@@ -39,8 +39,8 @@ class Dec14Test {
     {
         dec14.updateLinesFromFilename(inputFilename);
 
-        long answer = dec14.part2();
+        long answer = dec14.part2(40);
         System.out.println("Part2: " + answer);
-        Assertions.assertEquals(18145, answer);
+        Assertions.assertEquals(3288891573057L, answer);
     }
 }

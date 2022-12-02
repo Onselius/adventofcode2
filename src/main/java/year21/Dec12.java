@@ -12,11 +12,11 @@ public class Dec12 {
 
     private List<String> lines;
     private HashMap<List<Integer>, Integer> grid;
-    private HashSet<String> paths;
+    private int paths;
     private HashMap<String, List<String>> connections;
 
     public Dec12() {
-        this.paths = new HashSet<>();
+        this.paths = 0;
     }
 
     protected long part1()
@@ -26,7 +26,7 @@ public class Dec12 {
         ArrayList<String> path = new ArrayList<>();
         traverse("start", path);
 
-        return paths.size();
+        return paths;
     }
 
     protected long part2()
@@ -36,7 +36,7 @@ public class Dec12 {
         ArrayList<String> path = new ArrayList<>();
         traverse2("start", path, false);
 
-        return paths.size();
+        return paths;
     }
 
     private HashMap<String, List<String>> parseInput()
@@ -64,7 +64,7 @@ public class Dec12 {
         {
             if (child.equals("end"))
             {
-                this.paths.add(path.toString());
+                this.paths++;
                 continue;
             }
             if (child.equals(child.toLowerCase()) && path.contains(child))
@@ -87,7 +87,7 @@ public class Dec12 {
             if (child.equals("start")) continue;
             if (child.equals("end"))
             {
-                this.paths.add(path.toString());
+                this.paths++;
                 continue;
             }
             boolean isLowerCase = child.equals(child.toLowerCase());
