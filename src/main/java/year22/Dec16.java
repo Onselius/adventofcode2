@@ -1,5 +1,7 @@
 package year22;
 
+import util.StopWatch;
+
 import java.util.List;
 
 public class Dec16 {
@@ -10,12 +12,19 @@ public class Dec16 {
 
     protected int part1()
     {
+        StopWatch stopWatch = new StopWatch();
+
+
+        stopWatch.stopTime();
         return 1;
     }
 
     protected int part2()
     {
+        StopWatch stopWatch = new StopWatch();
 
+
+        stopWatch.stopTime();
         return 1;
     }
 
