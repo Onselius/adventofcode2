@@ -1,6 +1,6 @@
 package year19;
 
-import util.Timer;
+import util.StopWatch;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 public class Dec12 {
     public static void main(String[] args) {
-        Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         File file = new File("19/input12.txt");
         Moon[] moons = new Moon[4];
         Moon[] originalState = new Moon[4];
@@ -62,7 +62,7 @@ public class Dec12 {
         long lcmXY = leastCommonMultiple(foundX, foundY);
         long lcmXYZ = leastCommonMultiple(lcmXY, foundZ);
         System.out.println("LCM for all positions is " + lcmXYZ);
-        timer.stopTime();
+        stopWatch.stopTime();
     }
     public static long leastCommonMultiple(long n1, long n2){
         long higher = Math.max(n1, n2);

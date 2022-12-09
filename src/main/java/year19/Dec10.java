@@ -1,13 +1,13 @@
 package year19;
 
-import util.Timer;
+import util.StopWatch;
 
 import java.io.*;
 import java.util.*;
 
 public class Dec10 {
     public static void main(String[] args) {
-        util.Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         File file = new File("19/input10.txt");
         String input;
         HashSet<List<Integer>> asteroids = new HashSet<>(441);
@@ -44,7 +44,7 @@ public class Dec10 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        timer.stopTime();
+        stopWatch.stopTime();
     }
     private static List<Integer> getSpaceStation(HashMap<List<Integer>, Integer> visible){
         List<Integer> spaceStation = null;

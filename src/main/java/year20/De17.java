@@ -1,7 +1,7 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.*;
 
@@ -14,7 +14,7 @@ public class De17 {
     static Set<List<Integer>> alreadySeen;
 
     public static void main(String[] args) {
-        util.Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         String testFile = "20/test/test17.txt";
         String realFile = "20/input/input17.txt";
         int iterations = 6;
@@ -70,7 +70,7 @@ public class De17 {
         }
         totalActive = positions.size();
         System.out.println("Total: " + totalActive);
-        timer.stopTime();
+        stopWatch.stopTime();
     }
 
     private static void generatePart1Diff(){

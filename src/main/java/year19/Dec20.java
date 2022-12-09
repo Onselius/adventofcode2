@@ -1,13 +1,13 @@
 package year19;
 
-import util.Timer;
+import util.StopWatch;
 
 import java.io.*;
 import java.util.*;
 
 public class Dec20 {
     public static void main(String[] args) throws InterruptedException {
-        util.Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         File file = new File("19/input20.txt");
         String baseString;
         Map<List<Integer>, Character> grid = new HashMap<>();
@@ -78,7 +78,7 @@ public class Dec20 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        timer.stopTime();
+        stopWatch.stopTime();
     }
     public static List<Integer> getMaxYX(Map<List<Integer>, Character> grid){
         int maxY = 0;

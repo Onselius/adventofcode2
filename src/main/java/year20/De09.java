@@ -1,13 +1,13 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.*;
 
 public class De09 {
     public static void main(String[] args) {
-        util.Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
 
         List<Long> inputLines = ReadFile.convertToLong(ReadFile.getTextFromFile("20/input09.txt"));
 
@@ -31,7 +31,7 @@ public class De09 {
         System.out.println("Part 1: " + part1);
         System.out.println("Part 2: " + part2(inputLines, part1));
 
-        timer.stopTime();
+        stopWatch.stopTime();
     }
 
     private static long part2(List<Long> list, Long value){

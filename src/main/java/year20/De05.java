@@ -1,7 +1,7 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class De05 {
     public static void main(String[] args) {
-        Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         List<String> inputLines = ReadFile.getTextFromFile("20/input05.txt");
 
         int id = 0;
@@ -23,7 +23,7 @@ public class De05 {
         System.out.println("Highest seat id: " + Collections.max(ids));
 
         System.out.println("My seat: " + checkSeat(ids));
-        timer.stopTime();
+        stopWatch.stopTime();
     }
 
     private static int checkSeat(List<Integer> ids){

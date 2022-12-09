@@ -1,7 +1,7 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class De12 {
     public static void main(String[] args) {
-        Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         List<String> input = ReadFile.getTextFromFile("20/input/input12.txt");
 
         HashMap<Character, Integer> map = new HashMap<>();
@@ -56,7 +56,7 @@ public class De12 {
         northSouth = mapPart2.getOrDefault('N', 0) - mapPart2.getOrDefault('S', 0);
         System.out.println("Manhattan distance: " + (Math.abs(eastWest) + Math.abs(northSouth)));
 
-        timer.stopTime();
+        stopWatch.stopTime();
     }
 
     private static void rotateRight(int rotations, int[] array){

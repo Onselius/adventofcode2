@@ -1,13 +1,13 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.*;
 
 public class De13 {
     public static void main(String[] args) {
-        util.Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         List<String> input = ReadFile.getTextFromFile("20/input/input13.txt");
         int earliest = Integer.parseInt(input.get(0));
         HashMap<Integer, Integer> busses = new HashMap<>();
@@ -39,7 +39,7 @@ public class De13 {
         System.out.println(offsets);
 
 
-        timer.stopTime();
+        stopWatch.stopTime();
     }
 
     private static long calculateOffsets(HashMap<Integer, Integer> offsets){

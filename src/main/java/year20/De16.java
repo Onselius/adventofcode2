@@ -1,7 +1,7 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 
 public class De16 {
     public static void main(String[] args) {
-        util.Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         String testFile = "20/test/test16.txt";
         String inputFile = "20/input/input16.txt";
 
@@ -112,7 +112,7 @@ public class De16 {
         System.out.println("value: " + value);
 
 
-        timer.stopTime();
+        stopWatch.stopTime();
     }
     private static HashSet getRange(String line){
         IntStream range;

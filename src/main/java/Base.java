@@ -1,3 +1,5 @@
+import util.StopWatch;
+
 import java.util.List;
 
 public class Base {
@@ -8,12 +10,19 @@ public class Base {
 
     protected int part1()
     {
+        StopWatch stopWatch = new StopWatch();
+
+
+        stopWatch.stopTime();
         return 1;
     }
 
     protected int part2()
     {
+        StopWatch stopWatch = new StopWatch();
 
+
+        stopWatch.stopTime();
         return 1;
     }
 

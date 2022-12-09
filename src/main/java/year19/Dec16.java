@@ -1,6 +1,6 @@
 package year19;
 
-import util.Timer;
+import util.StopWatch;
 
 import java.io.*;
 import java.util.*;
@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 
 public class Dec16 {
     public static void main(String[] args) throws IOException {
-        util.Timer part2 = new util.Timer();
-        util.Timer timer = new Timer();
+        StopWatch part2 = new StopWatch();
+        StopWatch stopWatch = new StopWatch();
         File file = new File("19/input16.txt");
         String input;
         String baseInput;
@@ -26,7 +26,7 @@ public class Dec16 {
         }
         System.out.println(input);
         System.out.print("Part 1: ");
-        timer.stopTime();
+        stopWatch.stopTime();
 
         System.out.println("indexstart: " + indexStart);
         System.out.println(baseInput);

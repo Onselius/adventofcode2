@@ -1,6 +1,6 @@
 package year19;
 
-import util.Timer;
+import util.StopWatch;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Dec11 {
     public static void main(String[] args) {
-        Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         File file = new File("19/input11.txt");
         BufferedReader reader;
         List<Integer> position = new ArrayList<>(List.of(150,150));
@@ -54,7 +54,7 @@ public class Dec11 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        timer.stopTime();
+        stopWatch.stopTime();
     }
     private static String turnRight(String direction){
         switch (direction){

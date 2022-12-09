@@ -1,14 +1,14 @@
 package year19;
 
-import util.Timer;
+import util.StopWatch;
 
 import java.io.*;
 import java.util.*;
 
 public class Dec19 {
     public static void main(String[] args) throws InterruptedException {
-        util.Timer timerTotal = new util.Timer();
-        util.Timer timer1 = new util.Timer();
+        StopWatch stopWatchTotal = new StopWatch();
+        StopWatch stopWatch1 = new StopWatch();
         File file = new File("19/input19.txt");
         IntcodeComputer computer;
         long[] instructions;
@@ -40,10 +40,10 @@ public class Dec19 {
             System.out.println(exitCode);
             printGrid(grid);
 
-            timer1.stopTime();
+            stopWatch1.stopTime();
             // PART 2
             System.out.println("Starting part 2");
-            util.Timer timer2 = new Timer();
+            StopWatch stopWatch2 = new StopWatch();
             grid = new LinkedHashMap<>(100000);
             Set<List<Integer>> positions = new LinkedHashSet<>(10000);
             int y = 0;
@@ -69,9 +69,9 @@ public class Dec19 {
                 increment *= 2;
 //                Thread.sleep(1000);
             }
-            timer2.stopTime();
+            stopWatch2.stopTime();
             System.out.print("Total time: ");
-            timerTotal.stopTime();
+            stopWatchTotal.stopTime();
 
         } catch (IOException e) {
             e.printStackTrace();

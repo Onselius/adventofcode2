@@ -1,7 +1,7 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class De14 {
     public static void main(String[] args) {
-        util.Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         List<String> input = ReadFile.getTextFromFile("20/input/input14.txt");
         HashMap<Long, Long> memory = new HashMap<>();
         HashMap<String, Integer> memoryPart2 = new HashMap<>();
@@ -57,7 +57,7 @@ public class De14 {
         }
         System.out.println("Part2 sum: " + sum);
 
-        timer.stopTime();
+        stopWatch.stopTime();
     }
 
     private static ArrayList<char[]> getAddress(String mask, String mem){

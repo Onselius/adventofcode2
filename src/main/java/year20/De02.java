@@ -1,20 +1,20 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.List;
 
 public class De02 {
     public static void main(String[] args) {
-        Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         List<String> inputLines = ReadFile.getTextFromFile("20/input02.txt");
 
         int[] results = countValidCommands(inputLines);
         System.out.println("Part 1: " + results[0]);
         System.out.println("Part 2: " + results[1]);
 
-        timer.stopTime();
+        stopWatch.stopTime();
     }
     private static int[] countValidCommands(List<String> inputLines){
         int part1Valids = 0;

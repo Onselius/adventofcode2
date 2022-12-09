@@ -1,13 +1,13 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.*;
 
 public class De07 {
     public static void main(String[] args) {
-        util.Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         List<String> inputLines = ReadFile.getTextFromFile("20/input07.txt");
         Map<String, Bag> bags = new HashMap<>();
 
@@ -42,7 +42,7 @@ public class De07 {
         int part2 = bags.get("shiny gold").getTotalBags();
         System.out.println("Part2: " + part2);
 
-        timer.stopTime();
+        stopWatch.stopTime();
     }
 }
 

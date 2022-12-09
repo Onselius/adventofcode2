@@ -1,13 +1,13 @@
 package year19;
 
-import util.Timer;
+import util.StopWatch;
 
 import java.io.*;
 import java.util.*;
 
 public class Dec13 {
     public static void main(String[] args) {
-        util.Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         File file = new File("19/input13.txt");
         BufferedReader reader;
         int[][] tiles = new int[30][44];
@@ -51,7 +51,7 @@ public class Dec13 {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        timer.stopTime();
+        stopWatch.stopTime();
     }
     public static int printTiles(int[][] tiles){
         int id;

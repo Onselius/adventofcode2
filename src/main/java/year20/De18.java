@@ -1,14 +1,14 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class De18 {
     public static void main(String[] args) {
-        Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         String testFile = "20/test/test18.txt";
         String inputFile = "20/input/input18.txt";
         List<String> input = ReadFile.getTextFromFile(inputFile);
@@ -18,7 +18,7 @@ public class De18 {
             sum += processLine(line, false);
         }
         System.out.println("Total part1: " + sum);
-        timer.stopTime();
+        stopWatch.stopTime();
         System.out.println();
 
         sum = 0L;
@@ -27,7 +27,7 @@ public class De18 {
         }
         System.out.println("Total part2: " + sum);
 
-        timer.stopTime();
+        stopWatch.stopTime();
     }
 
     private static long processLine(String line, boolean part2) {

@@ -2,14 +2,14 @@ package year20;
 
 import util.Grid;
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.HashMap;
 import java.util.List;
 
 public class De11 {
     public static void main(String[] args) {
-        Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
 
         List<String> input = ReadFile.getTextFromFile("20/input/input11.txt");
         int width = input.get(0).length();
@@ -31,7 +31,7 @@ public class De11 {
 
         System.out.println("Occupied seats: " + countOccupied(grid));
 
-        timer.stopTime();
+        stopWatch.stopTime();
     }
 
     private static int changeState(Grid grid){

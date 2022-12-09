@@ -1,6 +1,6 @@
 package year20;
 
-import util.Timer;
+import util.StopWatch;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class De15 {
     public static void main(String[] args) {
-        util.Timer timer = new util.Timer();
+        StopWatch stopWatch = new StopWatch();
 
         String testInput = "0,3,6";
         String realInput = "9,6,0,10,18,2,1";
@@ -41,8 +41,8 @@ public class De15 {
         }
         System.out.println("Last word spoken: " + lastSpoken);
 
-        timer.stopTime();
-        timer = new Timer();
+        stopWatch.stopTime();
+        stopWatch = new StopWatch();
 
         turn = 1;
         int[] numbers = new int[realInput.length()];
@@ -76,6 +76,6 @@ public class De15 {
         }
         System.out.println("Lastspoken: " + lastSpoken);
 
-        timer.stopTime();
+        stopWatch.stopTime();
     }
 }

@@ -1,10 +1,10 @@
 package util;
 
-public class Timer {
+public class StopWatch {
     private long startTime;
     private long stopTime;
 
-    public Timer() {
+    public StopWatch() {
         this.startTime = System.nanoTime();
     }
     public void stopTime(){

@@ -11,13 +11,13 @@ public class Dec09Test {
     private final Dec09 base_class = new Dec09();
 
     @Test
-    void testPart1()
+    void testPart1() throws InterruptedException
     {
         URL url  = getClass().getResource("test/test09.txt");
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part1());
+        Assertions.assertEquals(13, base_class.part1());
     }
 
     @Test
@@ -27,11 +27,11 @@ public class Dec09Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part2());
+        Assertions.assertEquals(1, base_class.part2());
     }
 
     @Test
-    void testPart1Input()
+    void testPart1Input() throws InterruptedException
     {
         URL url  = getClass().getResource("input/input09.txt");
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
@@ -39,7 +39,8 @@ public class Dec09Test {
 
         int part1 = base_class.part1();
         System.out.println("Part1: " + part1);
-        Assertions.assertEquals(0, part1);
+        Assertions.assertEquals(6256, part1);
+        // 5439 too low
     }
 
     @Test
@@ -51,6 +52,6 @@ public class Dec09Test {
 
         int part2 = base_class.part2();
         System.out.println("Part2: " + part2);
-        Assertions.assertEquals(0, part2);
+        Assertions.assertEquals(2665, part2);
     }
 }

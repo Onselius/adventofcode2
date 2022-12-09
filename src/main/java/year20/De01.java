@@ -1,13 +1,13 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.List;
 
 public class De01 {
     public static void main(String[] args) {
-        Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         List<Long> lines = ReadFile.convertToLong(ReadFile.getTextFromFile("20/input01.txt"));
 
         System.out.println(lines.toString());
@@ -15,7 +15,7 @@ public class De01 {
         System.out.println("Result is: " + (factors[0] * factors[1]));
         factors = get3FactorsFromList(lines);
         System.out.println("Result is: " + (factors[0] * factors[1] * factors[2]));
-        timer.stopTime();
+        stopWatch.stopTime();
     }
     private static Long[] get2FactorsFromList(List<Long> lines){
         Long[] factors = new Long[2];

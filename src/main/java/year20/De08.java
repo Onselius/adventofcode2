@@ -1,13 +1,13 @@
 package year20;
 
 import util.ReadFile;
-import util.Timer;
+import util.StopWatch;
 
 import java.util.*;
 
 public class De08 {
     public static void main(String[] args) {
-        util.Timer timer = new Timer();
+        StopWatch stopWatch = new StopWatch();
         List<String> inputLines = ReadFile.getTextFromFile("20/input08.txt");
 
         String command;
@@ -94,6 +94,6 @@ public class De08 {
                 break;
             }
         }
-        timer.stopTime();
+        stopWatch.stopTime();
     }
 }
