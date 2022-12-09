@@ -33,7 +33,6 @@ public class Dec09 {
             knots[i][0] = 100;
             knots[i][1] = 100;
         }
-//        System.out.println(Arrays.deepToString(knots));
         addToVisited();
 
         for (String line: lines)
@@ -47,14 +46,9 @@ public class Dec09 {
                 for (int j = 1; j < knots.length; j++)
                 {
                     moveKnot(knots[j - 1], knots[j]);
-//                    if (mustMove(knots[j - 1], knots[j]))
-//                    {
-//                        moveKnot(knots[j - 1], knots[j]);
-//                    }
                 }
                 addToVisited();
             }
-//            printGrid();
         }
         printGrid();
         return visited.size();
@@ -111,21 +105,6 @@ public class Dec09 {
                 knots[0][1] += 1;
                 break;
         }
-    }
-
-    private boolean mustMove(int[] head, int[] tail)
-    {
-        boolean mustMove = false;
-        if (abs(head[0] - tail[0]) >= 2)
-        {
-            mustMove = true;
-        }
-        else if (abs(head[1] - tail[1]) >= 2)
-        {
-            mustMove = true;
-        }
-
-        return mustMove;
     }
 
     private void addToVisited()
