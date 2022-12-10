@@ -17,7 +17,7 @@ public class Dec10Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part1());
+        Assertions.assertEquals(13140, base_class.part1());
     }
 
     @Test
