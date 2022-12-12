@@ -17,7 +17,25 @@ public class Dec12Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part1());
+        Assertions.assertEquals(31, base_class.part1());
+    }
+    @Test
+    void testPart1_2()
+    {
+        URL url  = getClass().getResource("test/test12_2.txt");
+        List<String> lines = ReadFile.getTextFromFile(url.getPath());
+        base_class.setLines(lines);
+
+        Assertions.assertEquals(27, base_class.part1());
+    }
+    @Test
+    void testPart1_3()
+    {
+        URL url  = getClass().getResource("test/test12_3.txt");
+        List<String> lines = ReadFile.getTextFromFile(url.getPath());
+        base_class.setLines(lines);
+
+        Assertions.assertEquals(33, base_class.part1());
     }
 
     @Test
@@ -27,11 +45,11 @@ public class Dec12Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part2());
+        Assertions.assertEquals(29, base_class.part2());
     }
 
     @Test
-    void testPart1Input()
+    void testPart1Input() throws InterruptedException
     {
         URL url  = getClass().getResource("input/input12.txt");
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
@@ -39,7 +57,9 @@ public class Dec12Test {
 
         int part1 = base_class.part1();
         System.out.println("Part1: " + part1);
-        Assertions.assertEquals(0, part1);
+        Assertions.assertEquals(425, part1);
+        // 455 too high
+        // 447 too high
     }
 
     @Test
@@ -51,6 +71,6 @@ public class Dec12Test {
 
         int part2 = base_class.part2();
         System.out.println("Part2: " + part2);
-        Assertions.assertEquals(0, part2);
+        Assertions.assertEquals(418, part2);
     }
 }
