@@ -7,7 +7,9 @@ function create_directories {
 }
 
 function create_textfiles {
-    for i in {03..25}; do
+    mkdir --parents "test/resources/year$year/input"
+    mkdir --parents "test/resources/year$year/test"
+    for i in {01..25}; do
         input_path="test/resources/year$year/input/input$i.txt"
         test_path="test/resources/year$year/test/test$i.txt"
         echo "Creating $input_path"
@@ -18,8 +20,9 @@ function create_textfiles {
 }
 
 function create_classfiles {
+    mkdir "main/java/year$year"
     base_path="main/java/Base.java"
-    for i in {03..25}; do
+    for i in {01..25}; do
         class_path="main/java/year$year/Dec$i.java"
         echo "Creating $class_path"
         cp $base_path $class_path
@@ -29,8 +32,9 @@ function create_classfiles {
 }
 
 function create_testfiles {
+    mkdir "test/java/year$year"
     base_path="test/java/BaseTest.java"
-    for i in {03..25}; do
+    for i in {01..25}; do
         class_name="Dec$i""Test"
         class_path="test/java/year$year/$class_name.java"
         echo "Creating $class_path"
