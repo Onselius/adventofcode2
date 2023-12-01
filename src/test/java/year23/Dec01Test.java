@@ -17,17 +17,17 @@ public class Dec01Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part1());
+        Assertions.assertEquals(54388, base_class.part1());
     }
 
     @Test
     void testPart2()
     {
-        URL url  = getClass().getResource("test/test01.txt");
+        URL url  = getClass().getResource("test/test01_2.txt");
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part2());
+        Assertions.assertEquals(281, base_class.part2());
     }
 
     @Test
