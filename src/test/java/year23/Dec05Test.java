@@ -17,7 +17,7 @@ public class Dec05Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part1());
+        Assertions.assertEquals(35, base_class.part1());
     }
 
     @Test
@@ -27,7 +27,7 @@ public class Dec05Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part2());
+        Assertions.assertEquals(46, base_class.part2());
     }
 
     @Test
@@ -37,9 +37,9 @@ public class Dec05Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        int part1 = base_class.part1();
+        long part1 = base_class.part1();
         System.out.println("Part1: " + part1);
-        Assertions.assertEquals(0, part1);
+        Assertions.assertEquals(173706076, part1);
     }
 
     @Test
@@ -49,7 +49,7 @@ public class Dec05Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        int part2 = base_class.part2();
+        long part2 = base_class.part2();
         System.out.println("Part2: " + part2);
         Assertions.assertEquals(0, part2);
     }

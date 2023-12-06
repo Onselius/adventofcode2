@@ -17,7 +17,7 @@ public class Dec02Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part1());
+        Assertions.assertEquals(8, base_class.part1());
     }
 
     @Test
@@ -27,9 +27,10 @@ public class Dec02Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part2());
+        Assertions.assertEquals(2286, base_class.part2());
     }
 
+    // 208 low
     @Test
     void testPart1Input()
     {
