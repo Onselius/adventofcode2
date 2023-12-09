@@ -17,17 +17,27 @@ public class Dec08Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part1());
+        Assertions.assertEquals(2, base_class.part1());
+    }
+
+    @Test
+    void testPart1_2()
+    {
+        URL url  = getClass().getResource("test/test08_2.txt");
+        List<String> lines = ReadFile.getTextFromFile(url.getPath());
+        base_class.setLines(lines);
+
+        Assertions.assertEquals(6, base_class.part1());
     }
 
     @Test
     void testPart2()
     {
-        URL url  = getClass().getResource("test/test08.txt");
+        URL url  = getClass().getResource("test/test08_3.txt");
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        Assertions.assertEquals(0, base_class.part2());
+        Assertions.assertEquals(6, base_class.part2());
     }
 
     @Test
@@ -39,7 +49,7 @@ public class Dec08Test {
 
         int part1 = base_class.part1();
         System.out.println("Part1: " + part1);
-        Assertions.assertEquals(0, part1);
+        Assertions.assertEquals(19199, part1);
     }
 
     @Test
@@ -49,8 +59,8 @@ public class Dec08Test {
         List<String> lines = ReadFile.getTextFromFile(url.getPath());
         base_class.setLines(lines);
 
-        int part2 = base_class.part2();
+        long part2 = base_class.part2();
         System.out.println("Part2: " + part2);
-        Assertions.assertEquals(0, part2);
+        Assertions.assertEquals(13663968099527L, part2);
     }
 }
