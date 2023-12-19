@@ -1,6 +1,8 @@
 import pathlib
 from functools import cache
 
+# TODO revisit this
+
 
 def parse(puzzle_input) -> list[str]:
     """Parse input."""

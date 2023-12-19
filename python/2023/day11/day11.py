@@ -1,5 +1,5 @@
 import pathlib
-from grid import neighbors_4, manhattan_distance
+from util.grid import neighbors_4, manhattan_distance
 
 
 def parse(puzzle_input) -> tuple[list, list, dict]:

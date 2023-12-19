@@ -68,11 +68,19 @@ def print_grid(grid: dict, time: int = 0):
 
     print(
         "\n".join(
-            "".join(grid[(y, x)] for x in range(minX, maxX + 1))
+            "".join(grid.get((y, x), " ")[0] for x in range(minX, maxX + 1))
             for y in range(minY, maxY + 1)
         )
     )
     sleep(time)
+
+
+def print_non_square_grid(grid: dict, time: int = 0):
+    keys = grid.keys()
+    maxY: int = max(y for y, x in keys)
+    maxX: int = max(x for y, x in keys)
+    minY: int = min(y for y, x in keys)
+    minX: int = min(x for y, x in keys)
 
 
 def print_grid_with_pos(grid: dict, pos: tuple[int, int]):
