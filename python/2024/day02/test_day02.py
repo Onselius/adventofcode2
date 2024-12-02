@@ -1,24 +1,21 @@
 import pytest
-import day20 as aoc
+import day02 as aoc
 
 
 @pytest.fixture
 def example1():
-    puzzle_input = """broadcaster -> a, b, c
-%a -> b
-%b -> c
-%c -> inv
-&inv -> a"""
+    puzzle_input = """7 6 4 2 1
+1 2 7 8 9
+9 7 6 2 1
+1 3 2 4 5
+8 6 4 4 1
+1 3 6 7 9"""
     return aoc.parse(puzzle_input)
 
 
 @pytest.fixture
 def example2():
-    puzzle_input = """broadcaster -> a
-%a -> inv, con
-&inv -> b
-%b -> con
-&con -> output"""
+    puzzle_input = """   """
     return aoc.parse(puzzle_input)
 
 
@@ -30,18 +27,12 @@ def test_parse_example1(example1):
 
 def test_part1_example1(example1):
     """Test part 1 on example input."""
-    assert aoc.part1(example1) == 32000000
+    assert aoc.part1(example1) == 2
 
 
-def test_part1_example2(example2):
-    """Test part 1 on example input."""
-    assert aoc.part1(example2) == 11687500
-
-
-@pytest.mark.skip(reason="Not implemented")
 def test_part2_example1(example1):
     """Test part 2 on example input."""
-    assert aoc.part2(example1) == ...
+    assert aoc.part2(example1) == 4
 
 
 @pytest.mark.skip(reason="Not implemented")

@@ -4,8 +4,18 @@ import day21 as aoc
 
 @pytest.fixture
 def example1():
-    puzzle_input = """   """
-    return aoc.parse(puzzle_input)
+    puzzle_input = """...........
+.....###.#.
+.###.##..#.
+..#.#...#..
+....#.#....
+.##..S####.
+.##..#...#.
+.......##..
+.##.#.####.
+.##..##.##.
+..........."""
+    return puzzle_input
 
 
 @pytest.fixture
@@ -20,10 +30,27 @@ def test_parse_example1(example1):
     assert example1 == ...
 
 
-@pytest.mark.skip(reason="Not implemented")
+def test_walk_grid_example1(example1):
+    """Test part 1 on example input."""
+    grid, start = aoc.parse(example1)
+    assert aoc.walk_grid(grid, start, 6) == 16
+
+
+def test_walk_grid_2_example1(example1):
+    """Test part 1 on example input."""
+    grid, start = aoc.parse(example1)
+    assert (
+        aoc.walk_grid(
+            grid,
+            start,
+        )
+        == 668697
+    )
+
+
 def test_part1_example1(example1):
     """Test part 1 on example input."""
-    assert aoc.part1(example1) == ...
+    assert aoc.part1(example1) == 81
 
 
 @pytest.mark.skip(reason="Not implemented")
