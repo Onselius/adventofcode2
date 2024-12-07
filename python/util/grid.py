@@ -12,6 +12,12 @@ def neighbors_4(grid: dict[tuple], pos: tuple[int, int]):
     return [p for p in candidates if p in grid]
 
 
+def get_corners(grid: dict[tuple], pos: tuple[int, int]):
+    y, x = pos
+    candidates = [(y - 1, x - 1), (y - 1, x + 1), (y + 1, x - 1), (y + 1, x + 1)]
+    return [p for p in candidates if p in grid]
+
+
 def neighbors_8(grid: dict[tuple], pos: tuple[int, int]):
     y, x = pos
     candidates = [
