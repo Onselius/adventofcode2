@@ -38,6 +38,11 @@ def test_part2_example1(example1):
     assert aoc.part2(example1) == 11387
 
 
+def test_part3_example1(example1):
+    """Test part 3 on example input."""
+    assert aoc.part3(example1) == 11387
+
+
 @pytest.mark.skip(reason="Not implemented")
 def test_part2_example2(example2):
     """Test part 2 on example input."""

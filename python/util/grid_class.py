@@ -1,7 +1,16 @@
 from time import sleep
 
 
-def neighbors_4(grid: dict[tuple], pos: tuple[int, int], boundry: bool = True):
+class Grid:
+    def __init__(self):
+        self.grid = {}
+        self.pos = (0, 0)
+
+    def create_grid(self, input):
+        pass
+
+
+def neighbors_4(grid: dict[tuple], pos: tuple[int, int]):
     y, x = pos
     candidates = [
         (y - 1, x),
@@ -9,9 +18,7 @@ def neighbors_4(grid: dict[tuple], pos: tuple[int, int], boundry: bool = True):
         (y, x - 1),
         (y, x + 1),
     ]
-    if boundry:
-        return [p for p in candidates if p in grid]
-    return candidates
+    return [p for p in candidates if p in grid]
 
 
 def get_corners(grid: dict[tuple], pos: tuple[int, int]):
@@ -67,10 +74,6 @@ def getWest(pos: tuple) -> tuple:
     return (pos[0], pos[1] - 1)
 
 
-def getDirections():
-    return [getWest, getNorth, getEast, getSouth]
-
-
 def print_grid(grid: dict, time: int = 0):
     keys = grid.keys()
     maxY: int = max(y for y, x in keys)
@@ -84,22 +87,6 @@ def print_grid(grid: dict, time: int = 0):
             for y in range(minY, maxY + 1)
         )
     )
-    sleep(time)
-
-
-def print_fixed_pos(size: tuple[int, int], positions: list, time: int):
-    maxY: int = size[0]
-    maxX: int = size[1]
-    minY: int = 0
-    minX: int = 0
-
-    for r in range(minY, maxY):
-        for c in range(minX, maxX):
-            if (r, c) in positions:
-                print("X", end="")
-            else:
-                print(".", end="")
-        print()
     sleep(time)
 
 
@@ -119,19 +106,12 @@ def print_grid_with_pos(grid: dict, pos: tuple[int, int]):
     minY: int = min(y for y, x in keys)
     minX: int = min(x for y, x in keys)
 
-    # print(
-    # "\n".join(
-    # "".join(grid[(y, x)] for x in range(minX, maxX + 1))
-    # for y in range(minY, maxY + 1)
-    # )
-    # )
-    for r in range(minY, maxY + 1):
-        for c in range(minX, maxX + 1):
-            if (r, c) == pos:
-                print("@", end="")
-            else:
-                print(grid.get((r, c), " "), end="")
-        print()
+    print(
+        "\n".join(
+            "".join(grid[(y, x)] for x in range(minX, maxX + 1))
+            for y in range(minY, maxY + 1)
+        )
+    )
 
 
 def print_grid_with_visited(grid: dict, visited: dict, time: int = 0):
@@ -141,8 +121,8 @@ def print_grid_with_visited(grid: dict, visited: dict, time: int = 0):
     minY: int = min(y for y, x in keys)
     minX: int = min(x for y, x in keys)
 
-    for r in range(minY, maxY + 1):
-        for c in range(minX, maxX + 1):
+    for r in range(minY, maxY):
+        for c in range(minX, maxX):
             if (r, c) in visited:
                 print("X", end="")
             else:
